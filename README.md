@@ -1,12 +1,10 @@
-# Meme of the Day dApp -- For Fantom Protocol & Opera Blockchain
+# Meme of the Day dApp
 
-Upload your meme, vote and comment on other memes, discover top memes with this dApp.
+Discover your favorite memes with this dApp. View, upload, vote, comment, and buy memes in different categories.
 
-<img src="/src/Meme-of-the-Day-dApp-Meme-Final.png" width=25% height=25% align="right">Meme of the Day is a fun social platform that was created for use with Fantom's Opera blockchain and Interplanetary File System (IPFS). The dApp interface runs in a web browser, where the user uploads a meme image that is saved in IPFS, which creates a hash that is stored on the Opera blockchain. This is our initial proof of concept functionality. Until Fantom releases Opera testnet, it is possible to get the dApp up and running in a local development environment with local Ethereum blockchain (Ganache). The Fantom Opera network is web3js compatible, so using the web3js calls in the documentation (https://web3js.readthedocs.io/en/v1.2.5/) should work the same as with the Opera network and Ethereum network.
+<img src="/src/Meme-of-the-Day-dApp-Meme-Final.png" width=25% height=25% align="right">Meme of the Day is a fun social platform that uses blockchain technology and Interplanetary File System (IPFS). The dApp interface runs in a web browser, where the user uploads a meme image that is saved in IPFS, which creates a hash that is stored on the blockchain. This dApp can prove that a user is the true creator of a meme (or any file they upload to IPFS) as our initial proof of concept, which can run in a local Ethereum development environment with Ganache. Using the web3js calls in the documentation (https://web3js.readthedocs.io/en/v1.2.5/) should work with the and Ethereum network.
 
-Beyond this, our vision is for people to vote and possibly comment on the memes they like, which would be featured in a list that is updated in real-time. After a user pays for their first vote, they would receive three free votes, paid directly from the transaction fee of the first vote (equal to the required gas for four total vote operations). The smart contract would save that gas in a dedicated Opera account that it would access to implement the three free votes.
-
-We are hopeful that Meme of the Day and the future voting mechanism would encourage more user interest and engagement with Opera network and the Fantom protocol. This dApp can prove that a user is the true creator of a meme (or any file they uplod to IPFS), and it is open to users from multiple blockchains, thanks to Fantom's interoperable protocol.
+Our vision is to feature a list of top memes by category to create a fun community experience. We are planning how to build the related functionalities. We are hopeful that Meme of the Day and the future voting mechanism would encourage more user interest and engagement with Web3 technology.
 
 
 **Dependencies are:**
@@ -15,15 +13,14 @@ We are hopeful that Meme of the Day and the future voting mechanism would encour
 - Truffle
 > npm install -g truffle@5.0.5 (important is to use this version)
 - Web3.js
-> The Fantom Opera network is web3js compatible, so using the web3js calls in the documentation 
-> (https://web3js.readthedocs.io/en/v1.2.5/) should work with the Opera Network and Ethereum network.
+> Using the web3js calls in the documentation 
+> (https://web3js.readthedocs.io/en/v1.2.5/) for use with rhw Ethereum network.
 - IPFS 
 > Public open IPFS through Infura is already coded into Meme dApp, find more about IPFS here
 > https://infura.io/
-- Opera blockchain: https://github.com/Fantom-foundation/go-lachesis
+- Blockchain
 > Currently it is possible to use local Ethereum blockchain (Ganache) to run the dApp.
-> After Opera testnet will be deployed and available, it will be possible to use the dApp on it.
-- Fantom desktop wallet: https://github.com/Fantom-foundation/desktop-web-wallet
+- Crypto wallet
 > Currently it is possible to use Metamask for testing the dApp.
 
 
@@ -35,7 +32,7 @@ npm install
 truffle migrate --reset
 npm run start
 ```
-Before starting the dApp with last command "npm run start", you need to make sure that local Opera blockchain is running. Please look into Opera blockchain repository at https://github.com/Fantom-foundation/go-lachesis on how to start it. After Opera blockchain is running and you started the dApp, you should see web browser open up, and the dApp will load and show the latest meme uploaded in browser window.
+Before starting the dApp with last command "npm run start", you need to make sure that local blockchain is running. After blockchain is running and you started the dApp, you should see web browser open up, and the dApp will load and show the latest meme uploaded in browser window.
 
 *If you are testing on a local blockchain, make sure Ganache is running with port 8545 in server settings (this is specified in truffle-config.js).<br><br>
 Note: For frontend test to display memes when dApp is started for the first time on your local computer, the wallet addresses in the MemesHandler.sol constructor must match the addresses in your Ganache test environment.*
