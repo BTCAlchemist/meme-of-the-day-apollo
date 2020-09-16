@@ -1,0 +1,56 @@
+/* Styles go here */
+.navbar{
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    height: 110px;
+    position: relative;
+}
+.imageGallery{
+    box-shadow: 1px 1px 2px 4px #f8f9fa;
+    padding: 2%;
+    margin-top: 4%;
+}
+.headerFont{
+    color: orange;
+    font-family: serif;
+    font-style: oblique;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px dimgrey;
+    font-weight: 1000;
+    padding-left: 10%;
+}
+
+  label, input {
+    color: #333;
+    font: 14px/20px Arial;
+  }
+
+
+
+  /* Hide the file input using
+  opacity */
+  [type=file] {
+      position: absolute;
+      filter: alpha(opacity=0);
+      opacity: 0;
+  }
+  input,
+  [type=file] + label {
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding: 10px;
+    width: 300px;
+  }
+  [type=file] + label {
+    top: 0.5em;
+    /* Decorative */
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    background-color: orange;
+  }
+
+  .image-thumbnail{
+      cursor: pointer;
+  }
