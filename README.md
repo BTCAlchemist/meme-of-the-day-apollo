@@ -34,10 +34,9 @@ npm run start
 ```
 Before starting the dApp with last command "npm run start", you need to make sure that local blockchain is running. After blockchain is running and you started the dApp, you should see web browser open up, and the dApp will load and show the latest meme uploaded in browser window.
 
-*If you are testing on a local blockchain, make sure Ganache is running with port 8545 in server settings (this is specified in truffle-config.js).<br><br>
-*If you are testing on a Matic Mumbai testnet is command to deploy smart contracts "truffle migrate --reset --network matic".<br>
+*If you are testing on a local blockchain, make sure Ganache is running with port 8545 in server settings (this is specified in truffle-config.js).<br><br>*
 
-Note: For frontend test to display memes when dApp is started for the first time on your local computer, the wallet addresses in the MemesHandler.sol constructor must match the addresses in your Ganache test environment.*
+*Note: For frontend test to display memes when dApp is started for the first time on your local computer, the wallet addresses in the MemesHandler.sol constructor must match the addresses in your Ganache test environment.*
 <br><br>
 
 ## Installation procedure (Matic Mumbai testnet)
