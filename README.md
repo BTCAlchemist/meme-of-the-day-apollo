@@ -44,6 +44,27 @@ https://docs.matic.network/docs/develop/truffle<br><br>
 Note: For frontend test to display memes when dApp is started for the first time on your local computer, the wallet addresses in the MemesHandler.sol constructor must match the addresses in your Ganache test environment.*
 <br><br>
 
+## Installation procedure (Matic Mumbai testnet)
+```shell
+git clone https://github.com/matprime/meme-of-the-day-dApp
+cd meme-of-the-day-dApp
+npm install
+truffle migrate --reset --network matic
+npm run start
+```
+When you start dApp with last command "npm run start", dApp will load and show the latest meme uploaded in browser window.
+
+*If you are testing on a Matic Mumbai testnet is command to deploy smart contracts "truffle migrate --reset --network matic".<br>
+Please follow additional instructions how to setup your Metamask to use Matic Mumbai testnet:<br>
+https://docs.matic.network/docs/develop/metamask/config-matic<br>
+Here is Matic Mumbai testnet Faucet to get some test Matic coins:<br>
+https://faucet.matic.network/<br>
+Here are some additional information how to deploy smart contract and dApp on Matic Mumbai testnet:
+https://docs.matic.network/docs/develop/truffle<br><br>
+
+Note: For frontend test to display memes when dApp is started for the first time on your local computer, the wallet addresses in the MemesHandler.sol constructor must match the addresses in your Ganache test environment.*
+<br><br>
+
 **Command to migrate smart contract to blockchain**
 ```shell
 truffle migrate
