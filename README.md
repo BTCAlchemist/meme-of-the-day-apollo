@@ -36,10 +36,6 @@ Before starting the dApp with last command "npm run start", you need to make sur
 
 *If you are testing on a local blockchain, make sure Ganache is running with port 8545 in server settings (this is specified in truffle-config.js).<br><br>
 *If you are testing on a Matic Mumbai testnet is command to deploy smart contracts "truffle migrate --reset --network matic".<br>
-Please follow additional instructions how to setup your Metamask to use Matic Mumbai testnet and get some test Matic coins here:<br>
-https://docs.matic.network/docs/develop/metamask/config-matic<br>
-Here are some additional information how to deploy dapp on Matic Mumbai testnet:
-https://docs.matic.network/docs/develop/truffle<br><br>
 
 Note: For frontend test to display memes when dApp is started for the first time on your local computer, the wallet addresses in the MemesHandler.sol constructor must match the addresses in your Ganache test environment.*
 <br><br>
@@ -59,7 +55,7 @@ Please follow additional instructions how to setup your Metamask to use Matic Mu
 https://docs.matic.network/docs/develop/metamask/config-matic<br>
 Here is Matic Mumbai testnet Faucet to get some test Matic coins:<br>
 https://faucet.matic.network/<br>
-Here are some additional information how to deploy smart contract and dApp on Matic Mumbai testnet:
+Here are additional information how to deploy smart contract and dApp on Matic Mumbai testnet. You will need to create .secret file holding seed words from your wallet on Matic testnet Mumbai network:
 https://docs.matic.network/docs/develop/truffle<br><br>
 
 Note: For frontend test to display memes when dApp is started for the first time on your local computer, the wallet addresses in the MemesHandler.sol constructor must match the addresses in your Ganache test environment.*
