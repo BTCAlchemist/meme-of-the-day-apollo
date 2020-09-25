@@ -45,7 +45,7 @@ https://docs.matic.network/docs/develop/metamask/config-matic<br>
 Here is Matic Mumbai testnet Faucet to get some test Matic coins:<br>
 https://faucet.matic.network/<br>
 Here are additional information how to deploy smart contract and dApp on Matic Mumbai testnet. You will need to create .secret file holding seed words from your wallet on Matic testnet Mumbai network:
-https://docs.matic.network/docs/develop/truffle<br><br>
+https://docs.matic.network/docs/develop/truffle<br>
 
 ```shell
 git clone https://github.com/matprime/meme-of-the-day-dApp
@@ -55,8 +55,6 @@ truffle migrate --reset --network matic
 npm run start
 ```
 When you start dApp with last command "npm run start", dApp will load and show the latest meme uploaded in browser window.
-
-*Note: For frontend test to display memes when dApp is started for the first time on your local computer, the wallet addresses in the MemesHandler.sol constructor must match the addresses in your Ganache test environment.*
 <br><br>
 
 **Command to migrate smart contract to blockchain**
