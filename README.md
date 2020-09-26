@@ -1,44 +1,98 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Meme of the Day dApp -- Matic Blockchain
 
-## Available Scripts
+Upload your meme, vote and comment on other memes, discover top memes with this dApp.
 
-In the project directory, you can run:
+<img src="/src/content/Meme-of-the-Day-dApp-Meme-Final.png" width=25% height=25% align="right">Meme of the Day is a fun social platform that was created for use with Matic blockchain and Interplanetary File System (IPFS). The dApp interface runs in a web browser, where the user uploads a meme image that is saved in IPFS, which creates a hash that is stored on the Matic blockchain. This is our initial proof of concept functionality. It is possible to get the dApp up and running in a local development environment with local Ethereum blockchain (Ganache).
 
-### `yarn start`
+Beyond this, our vision is for people to vote and possibly comment on the memes they like, which would be featured in a list that is updated in real-time. After a user pays for their first vote, they would receive three free votes, paid directly from the transaction fee of the first vote (equal to the required gas for four total vote operations). The smart contract would save that gas in a dedicated Opera account that it would access to implement the three free votes.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We are hopeful that Meme of the Day and the future voting mechanism would encourage more user interest and engagement with our dApp. This dApp can prove that a user is the true creator of a meme (or any file they uplod to IPFS).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Dependencies are:**
+- Node.js 10.1x.x - 12.18.2
+> download from https://nodejs.org and follow installation instructions
+- Truffle
+- Web3.js
+- IPFS 
+> Public open IPFS through Infura is already coded into Meme dApp, find more about IPFS here
+> https://infura.io/
+> Currently it is possible to use local Ethereum blockchain (Ganache) to run the dApp.
+> Currently it is possible to use Metamask for testing the dApp.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation procedure
+```shell
+git clone https://github.com/matprime/meme-of-the-day-dApp
+cd meme-of-the-day-dApp
+npm install
+npm run deployDev (Spins up ganache-cli and deploys contract(s) on the chain)
+npm run start (In another terminal)
+```
+You should see web browser open up, and the dApp will load and show the latest meme uploaded in browser window.
 
-### `yarn build`
+**Command to migrate smart contract to blockchain**
+```shell
+npm run migrate
+```
+After successful migration of smart contract to blockchain, you can interact with it using Truffle console. Use truffle from the node_modules bin directory (.\node_modules\.bin\truffle)
+<br><br>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Some commands you can use with Truffle console**
+After smart contract deployment to blockchain with migration, you can use Truffle console to interact with smart contracts using CLI. To start Truffle console from command shell type:
+```shell
+.\node_modules\.bin\truffle console
+```
+After Truffle console is running you can get contract from blockchain with command:
+```javascript
+truffle(development)> const memeshandler = await MemesHandler.deployed()
+```
+You can store hash of meme to blockchain using contracts set function:
+```javascript
+truffle(development)> result = memeshandler.newMeme('QmYHaaWHgpT2iBGNxMCCFpDKgskej6bhubd5cnytUuJKRp')
+```
+To get the account under which meme was stored on blockchain, you can type:
+```javascript
+truffle(development)> const memesList = memeshandler.getMemesList()
+```
+You need to type constant as command to get value stored in it:
+```javascript
+truffle(development)> memesList
+[ '0x787eBC47F34081a0Df4dc3923798828ae52C538C' ]
+```
+Read the IPFS file hash from meme stored on blockchain:
+```javascript
+const meme = memeshandler.getMemeByAddress('0x787eBC47F34081a0Df4dc3923798828ae52C538C')
+```
+Output IPFS file hash into console:
+```javascript
+meme
+'QmYHaaWHgpT2iBGNxMCCFpDKgskej6bhubd5cnytUuJKRp'
+```
+<br>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**To run tests defined in folder /test run from shell command**  
+```javascript
+.\node_modules\.bin\truffle test
+```
+Tests will check if contract deployment on blockchain was done correctly, and it will check if get and set methods of smart contract are working correctly. After running the command, you will see output similar to:
+```shell
+Using network 'development'.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Compiling ./src/contracts/FilesHandler.sol...
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  Contract: FilesHandler
+    deployment
+0xDA228234a792cb9C7C8cf9E9E0dB48A8F57C7D08
+      ✓ deployed successfully!
+    storage access
+Saving and retrieveing from Blockhain
+test123
+      ✓ Hash saved and retrieved (282ms)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  2 passing (422ms)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
