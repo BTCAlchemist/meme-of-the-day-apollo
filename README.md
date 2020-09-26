@@ -31,6 +31,25 @@ npm run start (In another terminal)
 ```
 You should see web browser open up, and the dApp will load and show the latest meme uploaded in browser window.
 
+## Installation procedure (Matic Mumbai testnet)
+Please follow additional instructions how to setup your Metamask to use Matic Mumbai testnet:<br>
+https://docs.matic.network/docs/develop/metamask/config-matic<br>
+Here is Matic Mumbai testnet Faucet to get some test Matic coins:<br>
+https://faucet.matic.network/<br>
+Here are additional information how to deploy smart contract and dApp on Matic Mumbai testnet. You will need to create .secret file holding seed words from your wallet on Matic testnet Mumbai network:
+https://docs.matic.network/docs/develop/truffle<br>
+
+```shell
+git clone https://github.com/matprime/meme-of-the-day-dApp
+cd meme-of-the-day-dApp
+npm install
+.\node_modules\.bin\truffle migrate --reset --network matic
+npm run start
+```
+The truffle migrate command would require the secret file to be updated with the mnemonic which is the secret to account used to deploy contract on matic chain.
+When you start dApp with last command "npm run start", dApp will load and show the latest meme uploaded in browser window.
+<br><br>
+
 **Command to migrate smart contract to blockchain**
 ```shell
 npm run migrate
